@@ -13,6 +13,7 @@
         }
         h1 {
             font-size: 2.5em;
+            margin-bottom: 10px;
         }
         a {
             color: #9c27b0;
@@ -40,27 +41,453 @@
         .links a {
             margin-right: 15px;
         }
-    </style>
+
+        /* ---- New: sections (keep original style, add light structure) ---- */
+        .section {
+            margin-top: 45px;
+        }
+        .section h2 {
+            font-size: 1.6em;
+            margin: 0 0 10px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid rgba(156, 39, 176, 0.25);
+        }
+        .item {
+            margin: 14px 0;
+            padding: 12px 14px;
+            border-left: 4px solid rgba(156, 39, 176, 0.35);
+            background: rgba(156, 39, 176, 0.04);
+            border-radius: 8px;
+        }
+        .item-title {
+            font-weight: bold;
+        }
+        .item-meta {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 2px;
+        }
+        ul.clean {
+            margin: 8px 0 0 18px;
+        }
+        .links {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: #9c27b0;               /* your theme purple */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: transform 0.12s ease, filter 0.12s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.92);
+            text-decoration: none;
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+            color: #fff;                       /* icon color */
+        }
+
+        /* SVG helpers */
+        .fill { fill: currentColor; stroke: none; }
+        .stroke { fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+        /* ===== Education cards (match screenshot style) ===== */
+            .edu-card{
+            position: relative;
+            background: rgba(156, 39, 176, 0.06);  /* 淡紫灰底，和你整体风格统一 */
+            border-radius: 14px;
+            padding: 14px 14px;
+            margin: 14px 0;
+            overflow: hidden;
+            }
+
+            .edu-card::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background: #9c27b0;                  /* 主题紫 */
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
+            }
+
+            .edu-row{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            }
+
+            .edu-left{
+            flex: 1;
+            min-width: 0;
+            padding-left: 6px; /* 让文字离左边竖条稍远一点 */
+            }
+
+            /* 字体大小对齐你原先的 item-title / item-meta 风格（更小更简洁） */
+            .edu-title{
+            font-size: 1.05em;     /* 接近你原先标题大小 */
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            }
+
+            .edu-school{
+            margin: 0 0 4px 0;
+            font-style: italic;
+            font-size: 1em;
+            color: #333;
+            }
+
+            .edu-time{
+            margin: 0;
+            font-size: 0.95em;     /* 接近你原先 item-meta 的大小 */
+            color: #555;
+            }
+
+            .edu-right{
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(156, 39, 176, 0.55);  /* 右侧标签也用紫系浅色 */
+            font-size: 0.95em;
+            font-weight: 700;
+            white-space: nowrap;
+            }
+
+            .edu-divider{
+            width: 1px;
+            height: 22px;
+            background: rgba(156, 39, 176, 0.25);  /* 紫色分隔线 */
+            }
+
+            /* 移动端 */
+            @media (max-width: 720px){
+            .edu-row{ flex-direction: column; }
+            .edu-right{ align-self: flex-end; }
+            .edu-divider{ display: none; }
+            }
+
+            .exp-header{
+  font-weight: 700;
+  font-size: 1.02em;
+  margin: 0 0 4px 0;
+}
+.exp-sub{
+  color: #555;
+  font-size: 0.95em;
+  margin: 0 0 6px 0;
+}
+
+
+        
+        </style>
 </head>
 <body>
     <h1>Weiyi Zhang 张伟祎</h1>
+
     <div class="bio">
         <div class="bio-text">
             <p>Student from <a href="https://www.sustech.edu.cn/" target="_blank">Southern University of Science and Technology (SUSTech)</a>, specializing in <b>Computer Science and Technology</b>.</p>
 
-            <p>I am currently a fourth-year undergraduate student at SUSTech, also a student at <a href="https://www.imed-lab.com" target="_blank">iMED@SUSTech</a>. 
-            I am fortunate to be supervised by Prof. Jiang Liu.
-            My research interests lie in medical image processing and large-scale multi-modality models.</p>
+            <p>I am currently a senior undergraduate student at SUSTech, also a student at <a href="https://www.imed-lab.com" target="_blank">iMED@SUSTech</a>.
+            I am fortunate to be supervised by Prof. <a href="https://www.sustech.edu.cn/en/faculties/liujiang.html" target="_blank">Jiang Liu</a>.
+            My research interests lie in computer vision, especially medical image processing, and large-scale multi-modality models. My CV is available <a href="./CV-Weiyi_Zhang.pdf" target="_blank">here</a>.</p>
 
             <div class="links">
-                <a href="mailto:zhangwy2022@mail.sustech.edu.cn">Email</a>
-                <a href="https://github.com/V1Zhang">GitHub</a>
-                <a href="./CV-Weiyi_Zhang.pdf">CV</a>
-            </div>
+                <!-- Email -->
+                <a class="social-btn" href="mailto:zhangwy2022@mail.sustech.edu.cn"
+                    aria-label="Email" title="Email">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path class="stroke" d="M4 6h16v12H4z"></path>
+                    <path class="stroke" d="M4 7l8 6 8-6"></path>
+                    </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a class="social-btn" href="https://github.com/V1Zhang" target="_blank" rel="noopener"
+                    aria-label="GitHub" title="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path class="stroke" d="M9 19c-4 1.5-4-2.5-5-3"></path>
+                    <path class="stroke" d="M14 22v-3.5c0-1 .1-1.4-.5-2 2.2-.2 4.5-1.1 4.5-5a3.9 3.9 0 0 0-1-2.7 3.6 3.6 0 0 0-.1-2.7s-.9-.3-2.9 1a10 10 0 0 0-5.2 0c-2-1.3-2.9-1-2.9-1a3.6 3.6 0 0 0-.1 2.7A3.9 3.9 0 0 0 6 11.5c0 3.9 2.3 4.8 4.5 5-.4.4-.6 1-.5 2V22"></path>
+                    </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a class="social-btn" href="http://linkedin.com/in/weiyi-zhang-1a254a386" target="_blank" rel="noopener"
+                    aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path class="stroke" d="M2.5 9.5h4v12h-4z"></path>
+                    <path class="fill" d="M4.5 3.3a2.2 2.2 0 1 0 0 4.4a2.2 2.2 0 0 0 0-4.4z"></path>
+                    <path class="stroke" d="M10 9.5h4v2c.8-1.4 2.2-2.3 4.2-2.3c3 0 5.3 2 5.3 6v6.3h-4v-6c0-2-.8-3.3-2.6-3.3c-1.4 0-2.3.9-2.7 1.9c-.1.3-.2.7-.2 1.1v6.3h-4z"></path>
+                    </svg>
+                </a>
+                </div>
         </div>
         <div>
-            <img src="./photo.jpg" alt="Profile photo">
+            <img src="./photo.png" alt="Profile photo">
         </div>
     </div>
-</body>
-</html>
+
+    <!-- ================= Education ================= -->
+<div class="section" id="education">
+  <h2>Education</h2>
+
+  <!-- SUSTech -->
+  <div class="edu-card">
+    <div class="edu-row">
+      <div class="edu-left">
+        <p class="edu-title">Bachelor of Science in Computer Science</p>
+        <p class="edu-school">Southern University of Science and Technology (SUSTech)</p>
+        <p class="edu-time">2022 - Present Expected Graduation: 2026</p>
+      </div>
+      <div class="edu-right">
+        <div class="edu-divider"></div>
+        <div>GPA: 3.75/4.0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUS -->
+  <div class="edu-card">
+    <div class="edu-row">
+      <div class="edu-left">
+        <p class="edu-title">National University of Singapore (NUS) SoC Workshop</p>
+        <p class="edu-time">2024.5 - 2024.7 Summer School - Artificial Intelligence of Things</p>
+      </div>
+      <div class="edu-right">
+        <div class="edu-divider"></div>
+        <div>Grade: A</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Berkeley -->
+  <div class="edu-card">
+    <div class="edu-row">
+      <div class="edu-left">
+        <p class="edu-title">University of California, Berkeley (UCB) BGA</p>
+        <p class="edu-time">2025.9 - 2025.12 Visiting Student</p>
+      </div>
+      <div class="edu-right">
+        <div class="edu-divider"></div>
+        <div>Pending</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+    <!-- ================= Research & Publications ================= -->
+    <div class="section" id="research-publications">
+  <h2>Research &amp; Publications</h2>
+
+  <div class="item">
+  <div class="item-title">Research Experience</div>
+  <ul class="clean">
+
+    <li>
+      <div class="exp-header">Condition-Aware Diffusion Model with FiLM-based Multi-Channel Generation</div>
+      <div class="exp-sub"><a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a> (Remote) · Advisor: Prof. <a href="https://xulabs.github.io/min-xu/" target="_blank">Min Xu</a>· 08/2025–present</div>
+      <ul class="clean">
+        <li>Implemented a diffusion architecture for 4-channel conditional generation.</li>
+        <li>Integrated feature-wise linear modulation (FiLM) across network layers for dynamic condition-aware control and improved fidelity.</li>
+        <li>Enabled controllable, semantically guided diffusion synthesis, improving adaptability to external conditions and interpretability of generative behavior.</li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="exp-header">MLLM Knowledge Acquisition from Educational Videos</div>
+      <div class="exp-sub"><a href="https://www.nottingham.edu.cn/en/index.aspx" target="_blank">University of Nottingham Ningbo China</a> · Advisors: Prof. <a href="https://www.sustech.edu.cn/en/faculties/liujiang.html" target="_blank">Jiang Liu</a>, Prof. <a href="https://research.nottingham.edu.cn/en/persons/jianfeng-ren/" target="_blank">Jianfeng Ren</a> · 01/2025–08/2025</div>
+      <ul class="clean">
+        <li>Designed Knowledge-RAG, a plug-and-play retrieval module for precise grounding and Q&amp;A.</li>
+        <li>Proposed metrics (KHD, PKAI) to evaluate knowledge acquisition and hallucination in MLLMs.</li>
+        <li>Built the LVideoQA benchmark with temporal annotations linking answers to supporting video segments.</li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="exp-header">Intelligent Diagnosis Algorithm Combining Temporal Eye-Tracking Medical Knowledge</div>
+      <div class="exp-sub">Southern University of Science and Technology (SUSTech) · Advisor: Prof. <a href="https://www.sustech.edu.cn/en/faculties/liujiang.html" target="_blank">Jiang Liu</a> · 09/2024–01/2025</div>
+      <ul class="clean">
+        <li>Analyzed the contribution of eye-movement signals across different time periods and modeled them as medical prior knowledge.</li>
+        <li>Used temporal eye-tracking priors to guide attention for diabetic retinopathy grading.</li>
+        <li>Improved both accuracy and interpretability of the diagnosis model.</li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="exp-header">Research on Blood Vessel Segmentation Algorithm of Retinal OCTA Image</div>
+      <div class="exp-sub">Southern University of Science and Technology (SUSTech) · Advisor: Prof. <a href="https://www.sustech.edu.cn/en/faculties/liujiang.html" target="_blank">Jiang Liu</a> · 02/2024–06/2024</div>
+      <ul class="clean">
+        <li>Proposed Resolution Restoration Assisted Segmentation (RRAS) to enhance vessel connectivity and segmentation accuracy.</li>
+        <li>Introduced Weighted Vascular Dice (WVD) for more expressive evaluation of vascular segmentation performance.</li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+
+  <div class="item">
+    <div class="item-title">Publications &amp; Manuscripts</div>
+    <ul class="clean">
+      <li>
+        <b>PEMUTA: Pedagogically-Enriched Multi-Granular Undergraduate Thesis Assessment</b>.
+        Under revision at <i>IEEE Transactions on Learning Technologies</i>.
+      </li>
+      <li>
+        <b>Did the MLLM Learn? Rethinking the Professional Knowledge Acquisition of MLLM from Multi-Disciplinary Educational Videos</b>.
+        Manuscript to be submitted.
+      </li>
+      <li>
+        <b>Intelligent Diagnosis Algorithm For Diabetic Retinopathy Integrating Temporal Eye Movement Medical Knowledge</b>.
+        Manuscript to be submitted.
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+   <!-- ================= Projects ================= -->
+    <div class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="item">
+        <div class="item-title">Intro to Computer Vision and Computational Photography</div>
+        <div class="item-meta">Computer Vision · Diffusion · Nerf</div>
+        <ul class="clean">
+        <li>Course portfolio showcasing multiple computer vision / computational photography assignments.</li>
+        <li>Includes experiment write-ups, visual results, and reproducible implementations.</li>
+        <li>
+            Links:
+            <a href="https://v1zhang.github.io/cs180/" target="_blank" rel="noopener">Website</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-title">In-Context Learning in Diffusion Models: A Comparative Analysis with Transformers</div>
+        <div class="item-meta">Project for Designing, Visualizing and Understanding Deep Neural Networks</div>
+        <ul class="clean">
+        <li>Research codebase for studying in-context learning behaviors in diffusion-style large models.</li>
+        <li>
+            Links:
+            <a href="https://github.com/Jaredanwolfgang/ICL-dLLM" target="_blank" rel="noopener">Code</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Stack Overflow Data Analysis Website</div>
+        <div class="item-meta">Project for Computer System Design and Application A</div>
+        <ul class="clean">
+        <li>A course final project implemented in Java with an emphasis on object-oriented design.</li>
+        <li>
+            Links:
+            <a href="https://github.com/V1Zhang/Java2_Final_Proj" target="_blank" rel="noopener">Code</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Video Conference System</div>
+        <div class="item-meta">Project for Networking Systems</div>
+        <ul class="clean">
+        <li>Built a video conferencing course project with core communication features.</li>
+        <li>
+            Links:
+            <a href="https://github.com/V1Zhang/CS305_proj_VideoConference" target="_blank" rel="noopener">Code</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Piano Project with FPGA</div>
+        <div class="item-meta">Project for Digital Logic</div>
+        <ul class="clean">
+        <li>An interactive piano-related course project focusing on user interaction and audio behavior.</li>
+        <li>
+            Links:
+            <a href="https://github.com/V1Zhang/CS207_proj_Piano" target="_blank" rel="noopener">Code</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-title">User matching based on eye image Wechat mini program -- "You are in my Eyes"</div>
+        <div class="item-meta">Project for Multimedia Information Processing</div>
+        <ul class="clean">
+        <li>Course project exploring multimedia processing / representation.</li>
+        <li>
+            Links:
+            <a href="https://github.com/V1Zhang/CS330_Multimedia_proj" target="_blank" rel="noopener">Code</a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Jungle Project</div>
+        <div class="item-meta">Project for Introduction to Computer Programming (Java)</div>
+        <ul class="clean">
+        <li>A programming course project (game / simulation style implementation).</li>
+        <li>
+            Links:
+            <a href="https://github.com/V1Zhang/CS109_proj_Jungle" target="_blank" rel="noopener">Code</a>
+        </li>
+        </ul>
+    </div>
+
+    </div>
+
+
+    <!-- ================= Awards ================= -->
+    <div class="section" id="awards">
+    <h2>Awards</h2>
+
+    <div class="item">
+        <ul class="clean">
+        <li>First Prize, College Students' Academic Science and Technology Works Competition (Guangdong), 2025</li>
+        <li>University Merit Student Scholarship (First Prize, &lt;1%), 2023–2025</li>
+        <li>Outstanding Student &amp; Student Leader (&lt;1%), 2023–2025</li>
+        <li>Second Prize, CUMCM in Guangdong Province, 2023</li>
+        <li>First Prize, Guangdong Province University Taekwondo Championship, 2023–2024</li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- ================= Skills ================= -->
+    <div class="section" id="skills">
+    <h2>Skills</h2>
+
+    <div class="item">
+        <div class="item-title">Coding &amp; Tools</div>
+        <div class="item-meta">Python · PyTorch · TensorFlow · Java · Git · Linux · LaTeX</div>
+    </div>
+
+    <div class="item">
+        <div class="item-title">Languages</div>
+        <div class="item-meta">English (TOEFL 104) · Mandarin (Native)</div>
+    </div>
+    </div>
+
+
+    </body>
+    </html>
